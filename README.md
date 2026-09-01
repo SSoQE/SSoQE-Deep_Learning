@@ -6,7 +6,7 @@
 
 **SSoQE 2026 · Wednesday, 16 September · 11:00–12:30**
 
-[View the slides](https://ssoqe.github.io/SSoQE-Deep_Learning_in_Ecology/) · [SSoQE website](https://ssoqe.github.io/SSoQE_website/) · [2026 programme](https://ssoqe.github.io/SSoQE_website/About/program.html)
+[View the slides](https://ssoqe.github.io/SSoQE-Deep_Learning/) · [SSoQE website](https://ssoqe.github.io/SSoQE_website/) · [2026 programme](https://ssoqe.github.io/SSoQE_website/About/program.html)
 
 
 | **📅 Course information** | **🧰 Technical** | **📌 Status** |
