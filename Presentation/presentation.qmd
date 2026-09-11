@@ -107,47 +107,12 @@ include_local_figure("Logos/SSOQE_logo3.png")
 :::
 :::::
 
-## [This presentation]{.text-bold .r-fit-text} {.title}
-
-:::::: columns
-:::: {.column width="70%"}
-::: r-fit-text
-
-[😸 Code on GitHub](%60r%20github_url%60)
-
-[🖥️ Slides](%60r%20slides_url%60)
-:::
-::::
-
-::: {.column width="30%"}
-```{r}
-#| label: qr_slides
-qr_slides <-
-  qrcode::qr_code(
-    slides_url,
-    ecl = "H"
-  )
-
-qrcode::generate_svg(
-  qrcode = qr_slides,
-  filename = here::here("Presentation/Materials/QR/qr_slides.svg"),
-  foreground = ssoqe_cols['white'],
-  background = ssoqe_cols['midnight_green']
-)
-
-include_local_figure("QR/qr_slides.svg")
-```
-:::
-::::::
-
 # [Learning Objectives]{.bold .r-fit-text} {.title}
 
 ## What we'll cover today
 
-:::: {.columns}
-
-::: {.column width="45%" .incremental}
-
+::::: columns
+::: {.column .incremental width="45%"}
 ### 🎯 **Main Topics**
 
 - Introducing DL
@@ -156,28 +121,27 @@ include_local_figure("QR/qr_slides.svg")
 - Reflecting on DL
 :::
 
-::: {.column width="55%" .incremental}
-
+::: {.column .incremental width="55%"}
 ### ✅ **By the end, you'll be able to:**
 
 - Explain the set up of DL models
 - Make decisions on DL model design
 - Reflect on the pros and cons of DL models
 :::
-
-::::
+:::::
 
 # [Introduction to Deep Learning]{.bold .r-fit-text} {.title}
 
 ## 🤔⁉️ What is Deep Learning ?
+
 ```{r}
 #| label: Mentimeter one
-include_local_figure("QR/Qrcode_Mentimeter_SSoQE2025_DL.png")
+include_local_figure("QR/Qrcode_Mentimeter_DL.png")
 ```
-Mentimeter code: **2460 2995**
+
+Mentimeter code: **7404 9257**
 
 ## The world of AI is manifold
-
 
 ```{r}
 #| label: AI-world
@@ -185,60 +149,54 @@ include_local_figure("Pictures/01_DL_world_PichlerHartig2022.png")
 ```
 
 ## Facets of Machine Learning
-<br>
-🧠 **Main idea:** Computer learns from data  
-🎯 **Main goal:** Making good predictions for new data  
-<br>
-  
-:::: {.columns}
 
-::: {.column width="50%" .incremental .fragment}
+<br> 🧠 **Main idea:** Computer learns from data\
+🎯 **Main goal:** Making good predictions for new data\
+<br>
 
+::::: columns
+::: {.column .incremental .fragment width="50%"}
 #### **supervised vs unsupervised learning**
+
 <br>
-    
-::: 
-
-::: {.column width="50%" .incremental .fragment}
-
-#### **classification vs regression**
-<br>  
-
 :::
 
-::::
+::: {.column .incremental .fragment width="50%"}
+#### **classification vs regression**
 
-:::: {.columns}
+<br>
+:::
+:::::
 
-::: {.column width="25%" .incremental .fragment}
+::::::: columns
+::: {.column .incremental .fragment width="25%"}
 ```{r}
 #| label: segmentation
 include_local_figure("Pictures/02_Segmentation.png")
 ```
 :::
 
-::: {.column width="25%" .incremental .fragment}
+::: {.column .incremental .fragment width="25%"}
 ```{r}
 #| label: clustering
 include_local_figure("Pictures/03_Clustering.png")
 ```
 :::
 
-::: {.column width="25%" .incremental .fragment}
+::: {.column .incremental .fragment width="25%"}
 ```{r}
 #| label: classification
 include_local_figure("Pictures/04_Classification.png")
 ```
 :::
 
-::: {.column width="25%" .incremental .fragment}
+::: {.column .incremental .fragment width="25%"}
 ```{r}
 #| label: regression
 include_local_figure("Pictures/05_Regression.png")
 ```
 :::
-
-::::
+:::::::
 
 ## The unique feature of Deep Learning
 
@@ -249,81 +207,96 @@ include_local_figure("Pictures/06_DLArchitecture.png")
 
 ## Deep Learning vs Machine Learning
 
-❗Different strengths and use cases 
+❗Different strengths and use cases
 
-:::: {.columns}
-
-::: {.column width="50%" .incremental}
-
-**Deep Learning**  
+::::: columns
+::: {.column .incremental width="50%"}
+**Deep Learning**\
 [unstructured]{.text-highlight-midnightGreen} data such as images, text, or audio
 
 ```{r}
 #| label: sattelite landuse
 include_local_figure("Pictures/08_sattelitelanduse.png")
 ```
-
 :::
 
-::: {.column width="50%" .incremental .fragment}
-
-**Machine Learning**  
+::: {.column .incremental .fragment width="50%"}
+**Machine Learning**\
 less data in [structured]{.text-highlight-persianGreen}, tabular manner
 
 ```{r}
 #| label: table
 include_local_figure("Pictures/10_table.png")
 ```
-
 :::
-::::
+:::::
 
 ## 🤔⁉️ Have you built a Deep Learning model before ?
+
 ```{r}
 #| label: Mentimeter two
-include_local_figure("QR/Qrcode_Mentimeter_SSoQE2025_DL.png")
+include_local_figure("QR/Qrcode_Mentimeter_DL.png")
 ```
-Mentimeter code: **2460 2995**
+
+Mentimeter code: **7404 9257**
 
 # [Examples of Deep Learning in Ecology]{.bold .r-fit-text} {.title}
 
 ## 🤔⁉️ Which use cases of deep learning in ecology do you know ?
+
 ```{r}
 #| label: Mentimeter three
-include_local_figure("QR/Qrcode_Mentimeter_SSoQE2025_DL.png")
+include_local_figure("QR/Qrcode_Mentimeter_DL.png")
 ```
-Mentimeter code: **2460 2995**
+
+Mentimeter code: **7404 9257**
 
 ## 📸 Object detection and image classification for biodiversity monitoring or habitat mapping
+
 <br>
 
-:::: {.columns}
-::: {.column width="50%" .incremental }
-
+::::: columns
+::: {.column .incremental width="50%"}
 ```{r}
 #| label: camera traps
 include_local_figure("Pictures/11_wildlifeAI.png")
 ```
-
 :::
-::: {.column width="50%" .incremental }
+
+::: {.column .incremental width="50%"}
 ```{r}
 #| label: habitat mapping
 include_local_figure("Pictures/12_habitatmapping.png")
 ```
 :::
-::::
+:::::
 
-## Multispecies distribution modelling
+## 🏵️ Multispecies distribution modelling
+
 ```{r}
 #| label: multispecies
 include_local_figure("Pictures/14_Multispecies.png")
 ```
 
-## DeepDive: Estimating global biodiversity patterns through time
+## 🦖 DeepDive: Estimating global biodiversity patterns through time
+
 ```{r}
 #| label: deepdive
 include_local_figure("Pictures/16_DeepDive.png")
+```
+
+## 🧬 Species Delimitation 4.0 
+
+```{r}
+#| label: species delimitation 4.0
+include_local_figure("Pictures/17_SpeciesDelimitation.png")
+```
+
+## 🧠 Knowledge Guided ML
+
+```{r}
+#| label: knowledge guided ML
+include_local_figure("Pictures/18_KnowledgeGuidedML.png")
 ```
 
 # [Deep Learning Basics Hands-on]{.bold .r-fit-text} {.title}
@@ -331,38 +304,40 @@ include_local_figure("Pictures/16_DeepDive.png")
 # [Deep Learning a Research Frontier]{.bold .r-fit-text} {.title}
 
 ## Explainable AI
+
 ```{r}
 #| label: explainableAI
 include_local_figure("Pictures/17_ExplainableAI.png")
 ```
 
 ## Using existing DL models
+
 ```{r}
 #| label: existingAI
 include_local_figure("Pictures/18_ExistingAI.png")
 ```
 
 ## When is it worth it?
+
 - Know-how 🤓
 - How much more do we learn?
 - Ethics 🤝
 - Sustainability 🌱
 
 ## 🤔⁉️ How would you rank the mentioned concerns when buidling DL models?
+
 ```{r}
 #| label: Mentimeter four
-include_local_figure("QR/Qrcode_Mentimeter_SSoQE2025_DL.png")
+include_local_figure("QR/Qrcode_Mentimeter_DL.png")
 ```
-Mentimeter code: **2460 2995**
+
+Mentimeter code: **7404 9257**
 
 ## About me
 
-[Franka Gaiser]{.bold .r-fit-text .text-color-black} 
-Doctoral Candidate and Research Assistant at [University of Bayreuth](https://www.spowi5.uni-bayreuth.de/en/team/Gaiser/index.php)
+[Franka Gaiser]{.bold .r-fit-text .text-color-black} Doctoral Candidate and Research Assistant at [University of Bayreuth](https://www.spowi5.uni-bayreuth.de/en/team/Gaiser/index.php)
 
--   📧 Franka.Gaiser(at)uni-bayreuth.de
--   🌐 [Franka Gaiser LinkedIn](www.linkedin.com/in/franka-gaiser-a1534a202)
--   🐱 [Github](https://github.com/FGaiser)
--   🆔 [ORCID](https://orcid.org/0009-0003-2600-6603)
-
-
+- 📧 Franka.Gaiser(at)uni-bayreuth.de
+- 🌐 [Franka Gaiser LinkedIn](www.linkedin.com/in/franka-gaiser-a1534a202)
+- 🐱 [Github](https://github.com/FGaiser)
+- 🆔 [ORCID](https://orcid.org/0009-0003-2600-6603)
